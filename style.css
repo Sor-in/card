@@ -1,0 +1,133 @@
+:root {
+  --top-height: 200px;
+  --foto-size: 250px;
+  --foto-top: calc(var(--top-height) - var(--foto-size) / 2);
+  --dashed-weigth: 50px;
+  --doted-weigth: 2px;
+  --border-offset: 20px;
+  --dashed-size: calc(var(--foto-size) - var(--border-offset) + var(--border-offset) / 2);
+  --doted-size: calc(var(--dashed-size) - var(--doted-weigth) * 2);
+}
+
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #F89AA6;
+  background-image: linear-gradient(to bottom right, #F89AA6, #F89AA6, #F89AA6, #E962FD);
+  font-family: 'Geologica', sans-serif;
+}
+
+.card-wrapper {
+  width: 420px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #fff;
+  border: 1px dashed #888;
+  box-shadow: 0px 10px 35px #0008;
+  border-radius: 35px;
+  overflow: hidden;
+  transition: ease-out 0.5s;
+
+}
+
+.card-wrapper:hover {
+  transform: translateX(-50%) translateY(-50%) scale(1.1);
+  transition: ease-in 0.5s;
+}
+
+.top {
+  background-color: #1B4D5B;
+  background-image: linear-gradient(to right, #1B4D5B, #2B6674);
+  background-clip: content-box;
+  height: var(--top-height);
+}
+
+.top-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-foto,
+.profil {
+  width: var(--foto-size);
+  height: var(--foto-size);
+}
+
+.container-foto {
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  top: var(--foto-top);
+  box-shadow: 0px 0px 20px #0006;
+  overflow: hidden;
+}
+
+.container-foto::before {
+  content: "";
+  position: absolute;
+  width: var(--dashed-size);
+  height: var(--dashed-size);
+  border-radius: 50%;
+  border: var(--dashed-weigth) dashed #012455; 
+  animation: rot 20s infinite linear;
+  z-index: 1;
+}
+
+.container-foto::after {
+  content: "";
+  position: absolute;
+  width: var(--doted-size);
+  height: var(--doted-size);
+  border-radius: 50%;
+  border: var(--doted-weigth) dotted #745bff;
+  opacity: 0.8;
+  animation: rot 60s infinite linear reverse;
+  z-index: 1;
+}
+
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bottom {
+  border-top: 1px dashed #888;
+  padding: calc(var(--foto-size) / 2) 40px 20px;
+  text-align: center;
+}
+
+.name {
+  margin: 10px 0 0;
+}
+
+.function {
+  margin-top: 0;
+  color: #888;
+  font-size: larger;
+}
+
+.content {
+  text-align: left;
+}
+
+.content h2 {
+  margin: 35px 0 10px;
+}
+
+.content ul {
+  margin-top: 0;
+  font-size: large;
+}
