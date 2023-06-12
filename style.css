@@ -9,17 +9,12 @@
   --doted-size: calc(var(--dashed-size) - var(--doted-weigth) * 2);
 }
 
-
 body {
   height: 100vh;
   margin: 0;
   background-color: #F89AA6;
   background-image: linear-gradient(to bottom right, #F89AA6, #F89AA6, #F89AA6, #E962FD);
   font-family: 'Geologica', sans-serif;
-}
- 
-a{
-  /* color: #000; */
 }
 
 .card-wrapper {
