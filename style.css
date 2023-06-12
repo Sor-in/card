@@ -111,15 +111,16 @@ body {
 
 .name {
   margin: 10px 0 0;
+  text-shadow: 0px 1px 4px #888;
 }
 
 .function {
   margin-top: 0;
   color: #888;
-  font-size: larger;
 }
 
 .content {
+  text-shadow: 0px 1px 5px #8888;
   text-align: left;
 }
 
